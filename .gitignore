@@ -1,0 +1,37 @@
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+TestResults/
+
+# .NET tooling
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.DotSettings.user
+*.nupkg
+*.snupkg
+project.lock.json
+
+# IDE settings
+.vs/
+.vscode/
+*.code-workspace
+
+# Local configuration and secrets
+appsettings.Local.json
+appsettings.*.Local.json
+secrets.json
+*.pem
+*.key
+*.pfx
+*.p12
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
