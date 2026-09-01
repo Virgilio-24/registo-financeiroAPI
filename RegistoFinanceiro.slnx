@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="RegistoFinanceiro.Api/RegistoFinanceiro.Api.csproj" />
+  <Project Path="RegistoFinanceiro.Application/RegistoFinanceiro.Application.csproj" />
+  <Project Path="RegistoFinanceiro.Domain/RegistoFinanceiro.Domain.csproj" />
+  <Project Path="RegistoFinanceiro.Infrastructure/RegistoFinanceiro.Infrastructure.csproj" />
+</Solution>
