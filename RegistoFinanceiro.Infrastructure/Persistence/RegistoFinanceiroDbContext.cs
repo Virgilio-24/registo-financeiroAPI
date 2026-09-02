@@ -129,7 +129,7 @@ namespace RegistoFinanceiro.Infrastructure.Persistence
                 entity.ToTable(t => t.HasCheckConstraint("ck_records_amount_positive", "amount > 0"));
 
                 entity.Property(r => r.Reason).IsRequired();
-                entity.Property(r => r.MovementDate).HasColumnType("date").IsRequired();
+                entity.Property(r => r.MovementDate).HasColumnType("timestamp with time zone").IsRequired();
 
                 entity.Property(r => r.Status).IsRequired().HasDefaultValue("draft");
                 entity.ToTable(t => t.HasCheckConstraint(
