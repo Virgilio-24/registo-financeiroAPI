@@ -8,6 +8,7 @@ using RegistoFinanceiro.Application.Services;
 using RegistoFinanceiro.Infrastructure.Identity;
 using RegistoFinanceiro.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
+using RegistoFinanceiro.Infrastructure.Seed;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +40,11 @@ builder.Services
     })
     .AddEntityFrameworkStores<RegistoFinanceiroDbContext>()
     .AddDefaultTokenProviders();
+
+builder.Services.Configure<SeedOptions>(
+    builder.Configuration.GetSection(SeedOptions.SectionName));
+
+builder.Services.AddHostedService<DatabaseSeederHostedService>();
 
 builder.Services.Configure<JwtOptions>(
     builder.Configuration.GetSection(JwtOptions.SectionName));
