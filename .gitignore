@@ -26,6 +26,7 @@ project.lock.json
 appsettings.Local.json
 appsettings.*.Local.json
 secrets.json
+/RegistoFinanceiro.Api/docker-compose.yml
 *.pem
 *.key
 *.pfx

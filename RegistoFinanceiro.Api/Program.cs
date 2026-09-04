@@ -1,3 +1,5 @@
+using Asp.Versioning;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RegistoFinanceiro.Infrastructure.Persistence;
 using RegistoFinanceiro.Application.Configuration;
@@ -9,6 +11,7 @@ using RegistoFinanceiro.Infrastructure.Identity;
 using RegistoFinanceiro.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using RegistoFinanceiro.Infrastructure.Seed;
+using RegistoFinanceiro.Infrastructure.Email;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,7 +26,10 @@ var connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<RegistoFinanceiroDbContext>(options =>
     options.UseNpgsql(connectionString)
            .UseSnakeCaseNamingConvention());
-
+builder.Services
+    .AddApiVersioning()
+    .AddMvc();
+builder.Services.AddScoped<IEmailSender, LoggingEmailSender>();
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services
     .AddIdentity<ApplicationUser, IdentityRole<Guid>>(options =>
