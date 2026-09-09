@@ -12,6 +12,7 @@ using RegistoFinanceiro.Infrastructure.Persistence;
 using RegistoFinanceiro.Api.Middleware; 
 using Scalar.AspNetCore;
 using System.Text;
+using RegistoFinanceiro.Infrastructure.FinancialRecords;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -64,6 +65,8 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddScoped<IJwtTokenService, JwtTokenService>();
 builder.Services.AddScoped<IEmailSender, LoggingEmailSender>();
+builder.Services.AddScoped<IReferenceGenerator, ReferenceGenerator>();
+builder.Services.AddScoped<IAuditLogger, AuditLogger>();
 
 var app = builder.Build();
 
@@ -84,3 +87,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+public partial class Program { }
