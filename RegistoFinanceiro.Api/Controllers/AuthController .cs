@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Asp.Versioning;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using RegistoFinanceiro.Application.DTOs.Auth;
 using RegistoFinanceiro.Application.Services;
@@ -17,6 +18,7 @@ namespace RegistoFinanceiro.Api.Controllers
     [ApiController]
     [ApiVersion(1.0)]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [EnableRateLimiting("login")]
     public class AuthController  : ControllerBase
     {
         private readonly UserManager<ApplicationUser> _userManager;
