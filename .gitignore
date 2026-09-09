@@ -26,7 +26,6 @@ project.lock.json
 appsettings.Local.json
 appsettings.*.Local.json
 secrets.json
-/RegistoFinanceiro.Api/docker-compose.yml
 *.pem
 *.key
 *.pfx
@@ -36,3 +35,4 @@ secrets.json
 .DS_Store
 Thumbs.db
 Desktop.ini
+RegistoFinanceiro.Api/.env
