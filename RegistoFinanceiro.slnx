@@ -1,4 +1,8 @@
 <Solution>
+  <Folder Name="/tests/">
+    <Project Path="tests/RegistoFinanceiro.IntegrationTests/RegistoFinanceiro.IntegrationTests.csproj" />
+    <Project Path="tests/RegistoFinanceiro.UnitTests/RegistoFinanceiro.UnitTests.csproj" />
+  </Folder>
   <Project Path="RegistoFinanceiro.Api/RegistoFinanceiro.Api.csproj" />
   <Project Path="RegistoFinanceiro.Application/RegistoFinanceiro.Application.csproj" />
   <Project Path="RegistoFinanceiro.Domain/RegistoFinanceiro.Domain.csproj" />
